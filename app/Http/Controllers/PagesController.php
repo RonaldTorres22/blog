@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Post;
 
 class PagesController extends Controller{
 
@@ -11,8 +12,8 @@ class PagesController extends Controller{
 		#recieve from the model
 		#comple or process data from the model if needed
 		#pass that data to the correct view
-	
-		return view('pages/welcome');
+		$posts = Post::orderBy('created_at','desc')->limit(4)->get();
+		return view('pages/welcome')->with('Posts',$posts);
 	}
 
 	public function getAbout()

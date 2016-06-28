@@ -49,6 +49,11 @@
 
 				</tbody>
 			</table>
+
+			<div class="text-center">
+				{!! $Posts->links(); !!}
+			</div>
+
 		</div>
 </div>
 

@@ -20,6 +20,8 @@
     		{{form::label('title', 'Title:')}}
     		{{form::text('title', null, array('class' => 'form-control', 'required' => '', 'maxlength' => '255')) }}
 
+    		{{Form::label('slug','Slug:')}}
+    		{{Form::text('slug',null,array('class' => 'form-control','required' => '','minlength'=>'5', 'maxlength' => '255') )}}
 
     		{{form::label('body', "Post Body:")}}
     		{{form::textarea('body', null, array('class' => 'form-control', 'required' => ''))}}

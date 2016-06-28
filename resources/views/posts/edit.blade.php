@@ -12,6 +12,9 @@
 		{{Form::label('title', 'Title:')}}
 		{{Form::text('title', null, ["class" => 'form-control input-lg']) }}
 
+		{{Form::label('title','Slug:',['class' => 'form-spacing-top'])}}
+		{{Form::text('slug',null,['class' => 'form-control'])}}
+
 		{{Form::label('body', 'Body:', ['class' => 'form-spacing-top'])}}
 		{{Form::textarea('body', null, ['class' => 'form-control']) }}
 	</div>
@@ -22,7 +25,7 @@
 		<div class="well">
 			<dl class = "dl-horizontal">
 				<dt>Created At:</dt>
-				<dd>{{date('M j,Y h:ia',strtotime($post->created_at)) }}</dd>
+				<dd>{{date('M j,Y h:ia ',strtotime($post->created_at)) }}</dd>
 			</dl>
 
 			<dl class = "dl-horizontal">
@@ -34,7 +37,7 @@
 
 			<div class="row">
 				<div class="col-sm-6">
-				{!! Html::linkRoute('post.index', 'Cancel', array($post->id), array('class' => 'btn btn-danger btn-block')) !!}
+				{!! Html::linkRoute('post.show', 'Cancel', array($post->id), array('class' => 'btn btn-danger btn-block')) !!}
 			
 				</div>
 
